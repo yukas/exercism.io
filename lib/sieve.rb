@@ -48,7 +48,8 @@ class Sieve
   
   def printer
     puts primes.join(" ")
+    primes.join(" ")
   end
 end
 
-Sieve.new(61).sift_numbers
+Sieve.new(15).sift_numbers
