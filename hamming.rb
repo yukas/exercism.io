@@ -1,13 +1,15 @@
-class HammingDistance
-  attr_reader :hamming_distance, :strand1, :strand2
+class HammingDistanceCalculator
+  attr_reader :strand1, :strand2
+  attr_reader :hamming_distance
   
   def initialize(strand1, strand2)
     @strand1 = strand1
     @strand2 = strand2
+    
     @hamming_distance = 0
   end
     
-  def calculate_the_difference
+  def calculate_hamming_distance
     strand1 = @strand1.chars
     strand2 = @strand2.chars
     
@@ -20,9 +22,10 @@ class HammingDistance
     else
       raise "Введено неверное значение"
     end
-    
-    puts @hamming_distance
   end
 end
 
-HammingDistance.new("wwwwwwccczzcc","eewwwwccczzcc").calculate_the_difference
+calculator = HammingDistanceCalculator.new("wwwwwwccczzcc","eewwwwccczzcc")
+calculator.calculate_hamming_distance
+
+puts calculator.hamming_distance
