@@ -46,10 +46,9 @@ class Sieve
     @primes << number if quantity_of_dividers == 0    
   end
   
-  def printer
-    puts primes.join(" ")
+  def printer    
     primes.join(" ")
   end
 end
 
-Sieve.new(15).sift_numbers
+Sieve.new(65).sift_numbers

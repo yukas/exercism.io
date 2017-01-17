@@ -12,8 +12,10 @@ class PerfectNumber
     
     if divisors_sum == number
       puts "This is perfect number"
+      a = "This is perfect number"
     else
       puts "This is not a perfectum number"
+      a = "This is not a perfectum number"
     end 
   end
 
@@ -41,12 +43,9 @@ class PerfectNumber
   end
   
   
-  def conditional_test(num)
-    if number % num == 0 
-        @divisors_sum += number
-    end
+  def conditional_test(num)     
+    @divisors_sum += num if number % num == 0    
   end
 end
 
-perfect_number = PerfectNumber.new(7)
-perfect_number.determine_the_number_of_perfect
+
