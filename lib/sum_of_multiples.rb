@@ -1,27 +1,36 @@
-class SumOfMultiplease 
-  attr_reader :number, :sum
+class SumOfMultiplease
+  attr_reader :number
     
   def initialize(number)
-    @number = number
-    @sum = 0       
-  end
-
-  def amount_calculation       
-    create_a_list_of_numbers.each do |a|
-      conditional_test(a)      
-    end
+    @number          = number
     
-    puts @sum   
+    @sum             = 0
+    @list_of_numbers = []
   end
   
+  def get_sum_of_multiplease
+    amount_calculation
+    print_result
+    
+    sum
+  end
+
   private
+  
+  attr_reader :sum, :list_of_numbers
+  
+  def amount_calculation
+    create_a_list_of_numbers
+    list_of_numbers.each do |num|
+      conditional_test(num)
+    end
+  end
     
   def create_a_list_of_numbers
     index = 1
-    list_of_numbers = []
     
-    while index < @number.to_i
-      list_of_numbers << index
+    while index < number
+      @list_of_numbers << index
       
       index += 1
     end
@@ -29,11 +38,16 @@ class SumOfMultiplease
     list_of_numbers
   end
   
-  def conditional_test(a)
-    if ((a / 3.0).to_s.chars.last).to_i == 0 || ((a / 5.0).to_s.chars.last).to_i == 0      
-        @sum += a        
-    end   
-  end  
+  def conditional_test(num)
+    if num % 3 == 0 || num % 5 == 0
+      @sum += num
+    end
+  end
+  
+  def print_result
+    puts sum
+  end
 end
 
-SumOfMultiplease.new(1000).amount_calculation
+sum_multi = SumOfMultiplease.new(100)
+sum_multi.get_sum_of_multiplease
