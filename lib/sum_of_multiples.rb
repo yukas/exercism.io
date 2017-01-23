@@ -1,4 +1,4 @@
-class SumOfMultiplease
+class SumOfMultiples
   attr_reader :number
     
   def initialize(number)
@@ -8,7 +8,7 @@ class SumOfMultiplease
     @list_of_numbers = []
   end
   
-  def get_sum_of_multiplease
+  def get_sum_of_multiples
     amount_calculation
     print_result
     
@@ -49,5 +49,5 @@ class SumOfMultiplease
   end
 end
 
-sum_multi = SumOfMultiplease.new(100)
-sum_multi.get_sum_of_multiplease
+sum_multi = SumOfMultiples.new(100)
+sum_multi.get_sum_of_multiples
